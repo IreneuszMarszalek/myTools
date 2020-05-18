@@ -13,6 +13,7 @@ public class AsciiConverter {
         String text = provideString("Enter the string to be converted: ");
         char[] letterFromTextTable = text.toCharArray();
         int index = 1;
+        // TODO: think how to get rid of loop, put it into method.
         for ( char letter: letterFromTextTable ) {
             if (index != letterFromTextTable.length) {
                 letterAsciiCodePrint(letter, false);

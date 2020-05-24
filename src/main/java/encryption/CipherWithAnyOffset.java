@@ -1,10 +1,9 @@
 package encryption;
 
-import java.util.Arrays;
+import static interfaceProviders.ParametersProvider.provideString;
 
-import static interfaceProviders.ParametersProvider.*;
-
-public class CaesarsCipher {
+public class CipherWithAnyOffset {
+    static private final int SHIFT = 3;
 
     public static void printEncryption(){
         String toEncryptText = normalizeText(provideString("Podaj tekst do zaszyfrowania:"));
@@ -58,10 +57,10 @@ public class CaesarsCipher {
     private static char encryptSmallLetters (char smallLetter){
         char result;
 
-        if ((int) smallLetter + 3 > 122) {
-            result = (char) (((int) smallLetter + 3)-26);
+        if ((int) smallLetter + SHIFT > 122) {
+            result = (char) (((int) smallLetter + SHIFT)-26);
         }else {
-            result = (char) ((int) smallLetter + 3);
+            result = (char) ((int) smallLetter + SHIFT);
         }
         return result;
     }
@@ -70,10 +69,10 @@ public class CaesarsCipher {
     private static char decryptSmallLetters (char smallLetter){
         char result;
 
-        if ((int) smallLetter - 3 < 97) {
-            result = (char) (((int) smallLetter - 3)+26);
+        if ((int) smallLetter - SHIFT < 97) {
+            result = (char) (((int) smallLetter - SHIFT)+26);
         }else {
-            result = (char) ((int) smallLetter - 3);
+            result = (char) ((int) smallLetter - SHIFT);
         }
         return result;
     }
@@ -82,10 +81,10 @@ public class CaesarsCipher {
     private static char encryptBigLetters (char bigLetter){
         char result;
 
-        if ((int) bigLetter + 3 > 90) {
-            result = (char) (((int) bigLetter + 3)-26);
+        if ((int) bigLetter + SHIFT > 90) {
+            result = (char) (((int) bigLetter + SHIFT)-26);
         }else {
-            result = (char) ((int) bigLetter + 3);
+            result = (char) ((int) bigLetter + SHIFT);
         }
         return result;
     }
@@ -94,10 +93,10 @@ public class CaesarsCipher {
     private static char decryptBigLetters (char bigLetter){
         char result;
 
-        if ((int) bigLetter - 3 < 65) {
-            result = (char) (((int) bigLetter - 3)+26);
+        if ((int) bigLetter - SHIFT < 65) {
+            result = (char) (((int) bigLetter - SHIFT)+26);
         }else {
-            result = (char) ((int) bigLetter - 3);
+            result = (char) ((int) bigLetter - SHIFT);
         }
         return result;
     }
@@ -106,10 +105,10 @@ public class CaesarsCipher {
     private static char encryptDigits (char digit){
         char result;
 
-        if ((int) digit + 3 > 57) {
-            result = (char) (((int) digit + 3)-10);
+        if ((int) digit + SHIFT > 57) {
+            result = (char) (((int) digit + SHIFT)-10);
         }else {
-            result = (char) ((int) digit + 3);
+            result = (char) ((int) digit + SHIFT);
         }
         return result;
     }
@@ -118,10 +117,10 @@ public class CaesarsCipher {
     private static char decryptDigits (char digit){
         char result;
 
-        if ((int) digit - 3 < 48) {
-            result = (char) (((int) digit - 3)+10);
+        if ((int) digit - SHIFT < 48) {
+            result = (char) (((int) digit - SHIFT)+10);
         }else {
-            result = (char) ((int) digit - 3);
+            result = (char) ((int) digit - SHIFT);
         }
         return result;
     }

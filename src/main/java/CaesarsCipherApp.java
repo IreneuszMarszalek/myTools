@@ -5,7 +5,7 @@ import static encryption.CaesarsCipher.*;
 public class CaesarsCipherApp {
     public static void main(String[] args) {
         String toEncrypt = "Ireneusz Marszalek";
-        String toDecrypt = "KtgpgwubOctubcngm";
+        String toDecrypt = "LuhqhxvcPduvcdohn";
 
         System.out.println("Caesars Cipher. Text provided via Interface. Result printed");
         printEncryption();

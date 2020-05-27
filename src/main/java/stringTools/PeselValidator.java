@@ -31,16 +31,16 @@ public class PeselValidator {
 
     public static char getGender (String pesel){
         char result = 'X';
-        char[] peselSignsTbl = pesel.toCharArray();
-
-        int gender;
-
-        int seventhDigit = Integer.parseInt(Character.toString(peselSignsTbl[6]));
-        int eighthDigit = Integer.parseInt(Character.toString(peselSignsTbl[7]));
-        int ninthDigit = Integer.parseInt(Character.toString(peselSignsTbl[8]));
-        int tenthDigit = Integer.parseInt(Character.toString(peselSignsTbl[9]));
 
         if(validatePesel(pesel)) {
+
+            char[] peselSignsTbl = pesel.toCharArray();
+            int gender;
+
+            int seventhDigit = Integer.parseInt(Character.toString(peselSignsTbl[6]));
+            int eighthDigit = Integer.parseInt(Character.toString(peselSignsTbl[7]));
+            int ninthDigit = Integer.parseInt(Character.toString(peselSignsTbl[8]));
+            int tenthDigit = Integer.parseInt(Character.toString(peselSignsTbl[9]));
 
             gender = 1000 * seventhDigit + 100 * eighthDigit + 10 * ninthDigit + tenthDigit;
 

@@ -38,5 +38,9 @@ public class arraysApp {
         System.out.println(arraysTools.Arrays.itemAtWithSentry("4", stringTbl));
         System.out.println(arraysTools.Arrays.itemAtWithSentry('1', stringTbl));
         System.out.println(arraysTools.Arrays.itemAtWithSentry('a', charTbl));
+
+        System.out.println("item at half search");
+        System.out.println(arraysTools.Arrays.itemAtHalfSearch(3, floatTbl));
+        System.out.println(arraysTools.Arrays.itemAtHalfSearch(5.5, doubleTbl));
     }
 }

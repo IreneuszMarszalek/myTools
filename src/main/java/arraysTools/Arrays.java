@@ -295,4 +295,56 @@ public class Arrays {
 
         return result;
     }
+
+    public static int itemAtHalfSearch(float item, float... array){
+         int bottom = 0;
+         int top = array.length - 1;
+         int mid;
+         java.util.Arrays.sort(array);
+
+         while(true){
+             if (bottom > top){
+                 mid = -1;
+                 break;
+             }
+
+             mid = (bottom + top) / 2;
+             if(array[mid] == item){
+                 break;
+             }
+             if(array[mid] < item){
+                 bottom = mid + 1;
+             }else{
+                 top = mid - 1;
+             }
+         }
+
+         return mid;
+    }
+
+    public static int itemAtHalfSearch(double item, double... array){
+        int bottom = 0;
+        int top = array.length - 1;
+        int mid;
+        java.util.Arrays.sort(array);
+
+        while(true){
+            if (bottom > top){
+                mid = -1;
+                break;
+            }
+
+            mid = (bottom + top) / 2;
+            if(array[mid] == item){
+                break;
+            }
+            if(array[mid] < item){
+                bottom = mid + 1;
+            }else{
+                top = mid - 1;
+            }
+        }
+
+        return mid;
+    }
 }
